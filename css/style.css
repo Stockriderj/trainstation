@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600&display=swap");
+
+* {
+  font-family: "Exo 2", sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Vehicles */
+.road {
+  position: relative;
+  background: url("https://cdn1.iconfinder.com/data/icons/maps-locations-2/96/Road-512.png")
+    center / contain;
+  color: transparent;
+  height: 90px;
+  margin-bottom: 20px;
+}
+
+.vehicle {
+  position: absolute;
+  height: 30px;
+}
+
+#vehicle-1 {
+  right: -100%;
+  width: 100%;
+  transition: right 10s;
+}
+
+/* Trains */
+.train-tracks {
+  position: relative;
+  background: url("http://www.pngmart.com/files/3/Railroad-Tracks-Transparent-PNG.png")
+    center / contain;
+  color: transparent;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.train {
+  position: absolute;
+  height: 50px;
+}
+
+#passenger-train {
+  width: 100%;
+  transition: right 1.4s;
+}
+
+#cargo-train {
+  right: 100%;
+  width: 100%;
+  transition: right 1s;
+}
