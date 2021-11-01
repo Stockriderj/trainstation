@@ -13,7 +13,7 @@ const trainSound1 = new Audio("sounds/train-1.wav");
 
 const vehicle1 = document.querySelector("#vehicle-1");
 
-// const busSound1 = new Audio("");
+const busSound1 = new Audio("sounds/bus.wav");
 
 setInterval(() => {
     console.log("Passenger train is coming get off the trax");
@@ -29,9 +29,9 @@ setInterval(() => {
 
 setInterval(() => {
     console.log("Vehicle 1 is coming get off the road");
-    // busSound1.play();
+    busSound1.play();
 
-	vehicle1.style.background = "url('https://pluspng.com/img-png/bus-png-side-view-bus-png-800.png') center / contain no-repeat";
+	vehicle1.style.background = "url('https://pluspng.com/img-png/bus-png-side-view-bus-png-800.png') right / contain no-repeat";
 	vehicle1.style.right = "100%";
 	setTimeout(() => {
 		vehicle1.style.background = "none";
