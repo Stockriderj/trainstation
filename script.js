@@ -15,6 +15,7 @@ const cargoTrainSound = new Audio("sounds/cargo-train-1.wav")
 const vehicle1 = document.querySelector("#vehicle-1");
 
 const busSound = new Audio("sounds/bus.wav");
+const carSound1 = new Audio("sounds/car1.wav");
 
 setInterval(() => {
     console.log("Passenger train is coming get off the trax");
@@ -32,7 +33,7 @@ setInterval(() => {
     console.log("Vehicle 1 is coming get off the road");
 
     // Generate skin and sound
-    const vehicleID = getRandomNumber(1, 2);
+    const vehicleID = getRandomNumber(1, 3);
     console.log(`Vehicle 1 ID: {vehicleID}`);
 
     // Generate Sound
@@ -40,6 +41,9 @@ setInterval(() => {
         case 1:
         case 2:
             busSound.play();
+            break;
+        case 3:
+            carSound1.play();
             break;
     }
 
@@ -51,6 +55,8 @@ setInterval(() => {
         case 2:
             vehicle1.style.backgroundImage = "url('http://pngimg.com/uploads/bus/bus_PNG8608.png')";
             break;
+        case 3:
+            vehicle1.style.backgroundImage = "url('https://www.dlf.pt/dfpng/maxpng/80-809472_car-elevation-png.png')";
     }
 
 	vehicle1.style.right = "100%";
@@ -64,10 +70,21 @@ setInterval(() => {
     console.log("Cargo train is coming get off the trax");
     cargoTrainSound.play();
 
-	cargoTrain.style.backgroundImage = "url('images/cargo-train.png')";
+    // Generate skin
+    const cargoTrainID = getRandomNumber(1, 2);
+
+    switch (cargoTrainID) {
+        case 1:
+            cargoTrain.style.backgroundImage = "url('images/cargo-train.png')";
+            break;
+        case 2:
+            cargoTrain.style.backgroundImage = "url('http://pngimg.com/uploads/trian/trian_PNG16644.png')";
+            break;
+    }
+
 	cargoTrain.style.right = "-100%";
 	setTimeout(() => {
 		cargoTrain.style.backgroundImage = "none";
 		cargoTrain.style.right = "100%";
 	}, 1000);
-}, getRandomNumber(5000, 20000));
+}, getRandomNumber(1000, 20000));
