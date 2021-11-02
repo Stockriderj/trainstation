@@ -14,7 +14,7 @@ const cargoTrainSound = new Audio("sounds/cargo-train-1.wav")
 
 const vehicle1 = document.querySelector("#vehicle-1");
 
-const busSound1 = new Audio("sounds/bus.wav");
+const busSound = new Audio("sounds/bus.wav");
 
 setInterval(() => {
     console.log("Passenger train is coming get off the trax");
@@ -30,9 +30,29 @@ setInterval(() => {
 
 setInterval(() => {
     console.log("Vehicle 1 is coming get off the road");
-    busSound1.play();
 
-	vehicle1.style.backgroundImage = "url('https://pluspng.com/img-png/bus-png-side-view-bus-png-800.png')";
+    // Generate skin and sound
+    const vehicleID = getRandomNumber(1, 2);
+    console.log(`Vehicle 1 ID: {vehicleID}`);
+
+    // Generate Sound
+    switch (vehicleID) {
+        case 1:
+        case 2:
+            busSound.play();
+            break;
+    }
+
+    // Generate Skin
+    switch(vehicleID) {
+        case 1:
+            vehicle1.style.backgroundImage = "url('https://pluspng.com/img-png/bus-png-side-view-bus-png-800.png')";
+            break;
+        case 2:
+            vehicle1.style.backgroundImage = "url('http://pngimg.com/uploads/bus/bus_PNG8608.png')";
+            break;
+    }
+
 	vehicle1.style.right = "100%";
 	setTimeout(() => {
 		vehicle1.style.backgroundImage = "none";
