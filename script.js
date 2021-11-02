@@ -64,7 +64,7 @@ setInterval(() => {
 		vehicle1.style.backgroundImage = "none";
 		vehicle1.style.right = "-100%";
 	}, 10000);
-}, getRandomNumber(10000, 30000));
+}, getRandomNumber(15000, 20000));
 
 setInterval(() => {
     console.log("Cargo train is coming get off the trax");
@@ -72,10 +72,12 @@ setInterval(() => {
 
     // Generate skin
     const cargoTrainID = getRandomNumber(1, 2);
+    cargoTrain.style.backgroundSize = "contain";
 
     switch (cargoTrainID) {
         case 1:
             cargoTrain.style.backgroundImage = "url('images/cargo-train.png')";
+            cargoTrain.style.backgroundSize = "cover";
             break;
         case 2:
             cargoTrain.style.backgroundImage = "url('http://pngimg.com/uploads/trian/trian_PNG16644.png')";
@@ -87,4 +89,4 @@ setInterval(() => {
 		cargoTrain.style.backgroundImage = "none";
 		cargoTrain.style.right = "100%";
 	}, 1000);
-}, getRandomNumber(1000, 20000));
+}, getRandomNumber(10000, 20000));
